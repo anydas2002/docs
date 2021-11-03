@@ -1,0 +1,63 @@
+#Name:  Any Das
+#Email: ANY.DAS32@myhunter.cuny.edu
+#Date: November 3, 2021
+#This program prints: Maze Runner
+
+def playGame(maze,row,col):
+    commands = input("Enter a string of commands:")
+
+    ## Loops through the given set of commands
+    for command in commands:
+        ...
+        ### ENTER CODE HERE ###
+
+        if command == 'R':
+            col= col + 1
+            if not isPositionAvailable(row,col,maze):
+                return False
+        elif command == 'L':
+            col = col - 1
+            if not isPositionAvailable(row,col,maze):
+                return False
+        elif command == 'U':
+            row = row - 1
+            if not isPositionAvailable(row,col,maze):
+                return False
+        elif command == 'D':
+            row = row + 1
+            if not isPositionAvailable(row,col,maze):
+                return False
+        if maze [row][col] =='X':
+             return True 
+
+def main():
+    print("Hello Everyone! Welcome to Maze Runner!\n\To succeed in this Computer Science class, you must go through some trials and tribulations...So tonight, you must pass through our maze!\n\
+The game is not over until you have found your path...\n\ And if you try and fail, you must restart from the beginning and try again!\n\Good luck!")
+
+    ## Reads in a text file contaning a maze
+    textMazeFile=input("Enter name of text file containing a maze:")
+    textMaze= open(textMazeFile, "r")
+     maze= generateMaze(textMaze.read())
+
+    result= False
+    while not result:
+        print("\nHere is a picture of the mass, provided by some random person down the street ->)
+              
+        printMaze(maze,1,0)
+        result = playGame(maze,1,0)
+
+    print("Congrasts pn escaping the mazel!Please do join us again:)")
+if__name__ == '__main__"
+    main()
+
+              
+            
+            
+            
+        
+
+
+
+        
+            
+
